@@ -142,8 +142,9 @@ export const projects = [
     badge: "🚀 AWS Solutions Architect Project",
     title: "3-Tier Web Application on AWS",
     description:
-      "Designed and deployed a highly available, fault-tolerant 3-tier web architecture (web, application, database) on AWS using a custom VPC with public/private subnets across multiple Availability Zones, with Internet/NAT Gateways, Security Groups, and IAM roles. Deployed Node.js and Nginx on EC2 with SSM-based secure access; implemented internal and internet-facing Application Load Balancers with Auto Scaling Groups for horizontal scalability. Integrated private RDS MySQL, S3 storage, HTTPS via ACM, Route 53 DNS routing, and CloudFront CDN for secure content delivery.",
+      "Architected and deployed a highly available, fault-tolerant 3-tier web architecture on AWS using Terraform (IaC). Provisioned a custom VPC with public/private subnets across multiple Availability Zones, Internet/NAT Gateways, Security Groups, ALB, Auto Scaling Groups, RDS MySQL, S3, and CloudFront CDN.",
     techTags: [
+      "Terraform",
       "AWS VPC",
       "EC2",
       "Node.js",
