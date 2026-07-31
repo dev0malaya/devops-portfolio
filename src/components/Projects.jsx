@@ -3,14 +3,10 @@ import { projects, socialLinks } from '../data/portfolioData';
 import ArchitectureViewer from './ArchitectureViewer';
 import ArchitectureModal from './ArchitectureModal';
 
-import project1Arch from '../assets/projects/project1-architecture.png';
-import project2Arch from '../assets/projects/project2-architecture.png';
-import project3Arch from '../assets/projects/project3-architecture.png';
-
 const projectImages = {
-  "aws-3tier": project1Arch,
-  "cicd-automation": project2Arch,
-  "kubernetes-fullstack": project3Arch,
+  "aws-3tier": "/project1-architecture.png",
+  "cicd-automation": "/project2-architecture.png",
+  "kubernetes-fullstack": "/project3-architecture.png",
 };
 
 const GitHubIcon = () => (
