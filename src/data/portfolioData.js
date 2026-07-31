@@ -143,6 +143,14 @@ export const projects = [
     title: "3-Tier Web Application on AWS",
     description:
       "Architected and deployed a highly available, fault-tolerant 3-tier web architecture on AWS using Terraform (IaC). Provisioned a custom VPC with public/private subnets across multiple Availability Zones, Internet/NAT Gateways, Security Groups, ALB, Auto Scaling Groups, RDS MySQL, S3, and CloudFront CDN.",
+    architectureFlow: [
+      "Terraform (IaC)",
+      "AWS Custom VPC",
+      "Application Load Balancer (ALB)",
+      "Public & Private Subnets",
+      "Auto Scaling Group EC2",
+      "RDS MySQL + S3 & CloudFront CDN"
+    ],
     techTags: [
       "Terraform",
       "AWS VPC",
@@ -171,10 +179,20 @@ export const projects = [
     badge: "⚡ CI/CD Pipeline & CodeDeploy",
     title: "CI/CD Pipeline with Jenkins & AWS CodeDeploy",
     description:
-      "Built an end-to-end automated Continuous Integration and Continuous Deployment pipeline using Jenkins and AWS CodeDeploy. Orchestrated automated code checkout from GitHub, build validation, artifact storage on S3, and automated blue/green or rolling deployments to EC2 target groups behind Application Load Balancers with CloudWatch monitoring and automated build alerts.",
+      "Built an end-to-end automated Continuous Integration and Continuous Deployment pipeline using Jenkins and AWS CodeDeploy. Orchestrated automated code checkout from GitHub, build validation, SonarQube quality gate analysis, Docker ECR push, and automated blue/green or rolling deployments to EC2 target groups behind Application Load Balancers with CloudWatch monitoring.",
+    architectureFlow: [
+      "GitHub Webhook",
+      "Jenkins CI Server",
+      "SonarQube Quality Gate",
+      "Docker ECR Registry",
+      "AWS CodeDeploy Agent",
+      "EC2 Auto Scaling Target Groups"
+    ],
     techTags: [
       "Jenkins",
       "AWS CodeDeploy",
+      "SonarQube",
+      "Docker ECR",
       "GitHub Actions",
       "AWS EC2",
       "S3",
@@ -195,17 +213,26 @@ export const projects = [
     badge: "☸️ AWS EKS Microservices",
     title: "Kubernetes Microservices Deployment on AWS EKS",
     description:
-      "Containerized and deployed scalable microservices applications onto Amazon Elastic Kubernetes Service (AWS EKS). Configured Kubernetes Deployments, ClusterIP/NodePort Services, NGINX Ingress Controller, AWS Network Load Balancer (NLB), Route 53 DNS routing, and ACM SSL certificate automation. Resolved real-world pod connectivity, persistent storage, and cluster networking challenges.",
+      "Containerized and deployed scalable microservices applications onto Amazon Elastic Kubernetes Service (AWS EKS). Configured Route 53 DNS routing, NGINX Ingress Controller, AWS Network Load Balancer (NLB), ACM SSL certificate automation, 6 core microservices deployments, Horizontal Pod Autoscaling (HPA), and a Prometheus & Grafana monitoring stack.",
+    architectureFlow: [
+      "Route 53 & ACM SSL",
+      "NGINX Ingress Controller",
+      "AWS EKS Kubernetes Cluster",
+      "6 Microservices Deployments",
+      "Horizontal Pod Autoscaler (HPA)",
+      "Prometheus & Grafana Stack"
+    ],
     techTags: [
       "AWS EKS",
       "Kubernetes",
       "Docker",
       "NGINX Ingress",
       "AWS NLB",
+      "Prometheus",
+      "Grafana",
       "Route 53",
       "ACM",
-      "MySQL",
-      "Node.js"
+      "HPA"
     ],
     architectureImage: "../assets/projects/Project2-Architecture.png",
     links: {

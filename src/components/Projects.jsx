@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { projects, socialLinks } from '../data/portfolioData';
+import ArchitectureViewer from './ArchitectureViewer';
+import ArchitectureModal from './ArchitectureModal';
 
 import project1Arch from '../assets/projects/Project1-Architecture.png';
 import project2Arch from '../assets/projects/Project2-Architecture.png';
@@ -31,6 +33,7 @@ const ZoomIcon = () => (
 
 const ProjectCard = ({ project, aosDelay, onOpenModal }) => {
   const archImg = projectImages[project.id];
+  const fullProject = { ...project, architectureImage: archImg };
 
   return (
     <div 
@@ -66,11 +69,19 @@ const ProjectCard = ({ project, aosDelay, onOpenModal }) => {
             {project.description}
           </p>
 
+          {/* Interactive Flow Viewer inside card */}
+          {project.architectureFlow && (
+            <ArchitectureViewer 
+              flow={project.architectureFlow} 
+              onStepClick={() => onOpenModal(fullProject)}
+            />
+          )}
+
           {/* Architecture Diagram Preview Card */}
           {archImg && (
             <div 
               className="relative overflow-hidden rounded-xl bg-black/60 border border-white/10 mb-6 cursor-pointer group/img"
-              onClick={() => onOpenModal(archImg, project.title)}
+              onClick={() => onOpenModal(fullProject)}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-70 group-hover/img:opacity-30 transition-opacity" />
               <img 
@@ -118,7 +129,7 @@ const ProjectCard = ({ project, aosDelay, onOpenModal }) => {
           {/* View Diagram Button */}
           {archImg && (
             <button 
-              onClick={() => onOpenModal(archImg, project.title)}
+              onClick={() => onOpenModal(fullProject)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#ff2a2a] text-white text-sm font-semibold hover:bg-red-600 hover:shadow-[0_0_20px_rgba(255,42,42,0.4)] transition-all duration-300"
             >
               <ExternalLinkIcon />
@@ -132,14 +143,14 @@ const ProjectCard = ({ project, aosDelay, onOpenModal }) => {
 };
 
 const Projects = () => {
-  const [modalData, setModalData] = useState({ isOpen: false, imgSrc: '', title: '' });
+  const [modalState, setModalState] = useState({ isOpen: false, project: null });
 
-  const openModal = (imgSrc, title) => {
-    setModalData({ isOpen: true, imgSrc, title });
+  const openModal = (project) => {
+    setModalState({ isOpen: true, project });
   };
 
   const closeModal = () => {
-    setModalData({ isOpen: false, imgSrc: '', title: '' });
+    setModalState({ isOpen: false, project: null });
   };
 
   return (
@@ -155,7 +166,7 @@ const Projects = () => {
             Production Cloud <br className="hidden md:block" />Deployments
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-xl font-medium leading-relaxed">
-            Architectures designed with AWS best practices, container orchestration, high availability, and infrastructure automation.
+            Architectures designed with AWS best practices, Terraform IaC, container orchestration, high availability, and CI/CD pipelines.
           </p>
         </div>
 
@@ -188,51 +199,12 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Full-Screen Architecture Image Modal */}
-      {modalData.isOpen && (
-        <div 
-          className="fixed inset-0 z-[100000] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
-          onClick={closeModal}
-        >
-          <div 
-            className="relative max-w-5xl w-full bg-gray-900 border border-white/20 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="px-6 py-4 border-b border-white/10 flex justify-between items-center bg-black/40">
-              <h4 className="text-white text-lg font-bold truncate pr-4">
-                {modalData.title} — Architecture Blueprint
-              </h4>
-              <button 
-                onClick={closeModal}
-                className="text-white/60 hover:text-white bg-white/10 hover:bg-white/20 w-8 h-8 rounded-full flex items-center justify-center transition-colors shrink-0"
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Modal Image */}
-            <div className="p-4 overflow-auto flex justify-center items-center bg-black/60 min-h-[300px]">
-              <img 
-                src={modalData.imgSrc} 
-                alt={modalData.title} 
-                className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-md"
-              />
-            </div>
-
-            {/* Modal Footer */}
-            <div className="px-6 py-3 border-t border-white/10 bg-black/40 flex justify-between items-center text-xs text-white/50">
-              <span>Full High-Resolution Diagram</span>
-              <button 
-                onClick={closeModal}
-                className="text-white font-semibold underline hover:text-red-400 transition-colors"
-              >
-                Close View
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Full Architecture Modal */}
+      <ArchitectureModal 
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        project={modalState.project}
+      />
     </section>
   );
 };
