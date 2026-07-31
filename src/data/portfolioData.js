@@ -166,7 +166,7 @@ export const projects = [
       "ACM",
       "SSM"
     ],
-    architectureImage: "../assets/projects/Project1-Architecture.png",
+    architectureImage: "/project1-architecture.png",
     links: {
       github: "https://github.com/dev0malaya/aws-3tier-terraform-project",
       demo: "https://github.com/dev0malaya/aws-3tier-terraform-project",
@@ -200,7 +200,7 @@ export const projects = [
       "Bash Scripting",
       "CloudWatch"
     ],
-    architectureImage: "../assets/projects/Project3-Architecture.png",
+    architectureImage: "/project2-architecture.png",
     links: {
       github: "https://github.com/dev0malaya/jenkins-aws-codedeploy-pipeline",
       demo: "https://github.com/dev0malaya/jenkins-aws-codedeploy-pipeline",
@@ -234,7 +234,7 @@ export const projects = [
       "ACM",
       "HPA"
     ],
-    architectureImage: "../assets/projects/Project2-Architecture.png",
+    architectureImage: "/project3-architecture.png",
     links: {
       github: "https://github.com/dev0malaya/aws-eks-microservices-deployment",
       demo: "https://github.com/dev0malaya/aws-eks-microservices-deployment",

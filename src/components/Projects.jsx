@@ -3,14 +3,14 @@ import { projects, socialLinks } from '../data/portfolioData';
 import ArchitectureViewer from './ArchitectureViewer';
 import ArchitectureModal from './ArchitectureModal';
 
-import project1Arch from '../assets/projects/Project1-Architecture.png';
-import project2Arch from '../assets/projects/Project2-Architecture.png';
-import project3Arch from '../assets/projects/Project3-Architecture.png';
+import project1Arch from '../assets/projects/project1-architecture.png';
+import project2Arch from '../assets/projects/project2-architecture.png';
+import project3Arch from '../assets/projects/project3-architecture.png';
 
 const projectImages = {
   "aws-3tier": project1Arch,
-  "kubernetes-fullstack": project2Arch,
-  "cicd-automation": project3Arch,
+  "cicd-automation": project2Arch,
+  "kubernetes-fullstack": project3Arch,
 };
 
 const GitHubIcon = () => (
@@ -32,7 +32,7 @@ const ZoomIcon = () => (
 );
 
 const ProjectCard = ({ project, aosDelay, onOpenModal }) => {
-  const archImg = projectImages[project.id];
+  const archImg = project.architectureImage || projectImages[project.id];
   const fullProject = { ...project, architectureImage: archImg };
 
   return (
