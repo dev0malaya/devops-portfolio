@@ -21,7 +21,7 @@ export const personalInfo = {
 export const socialLinks = {
   github: "https://github.com/dev0malaya",
   linkedin: "https://linkedin.com/in/malaya-ra-pradhan",
-  instagram: "https://github.com/dev0malaya",
+  instagram: "https://www.instagram.com/malaya_ranjan_pradhan_/",
 };
 
 export const heroContent = {
