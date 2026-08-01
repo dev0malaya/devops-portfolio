@@ -15,7 +15,7 @@ export const personalInfo = {
   },
   summary:
     "MCA graduate with hands-on experience in AWS cloud infrastructure (Solutions Architect level), Linux administration, Python automation, and MySQL/PostgreSQL databases. Skilled in designing highly available, secure cloud architectures, implementing CI/CD pipelines, and automating infrastructure with Ansible, Docker, and Kubernetes.",
-  resumeUrl: "/Malaya_Ranjan_Pradhan_Resume.pdf",
+  resumeUrl: "/Malaya_Ranjan_Pradhan.pdf",
 };
 
 export const socialLinks = {
@@ -34,7 +34,7 @@ export const heroContent = {
     text: "Contact Me",
     href: "mailto:skp.pp.mrp@gmail.com?subject=Hiring Inquiry – Portfolio&body=Hello Malaya,%0D%0A%0D%0AI came across your portfolio and would like to discuss a Cloud / DevOps opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
-  ctaResume: { text: "Download Resume", href: "/Malaya_Ranjan_Pradhan_Resume.pdf" },
+  ctaResume: { text: "Download Resume", href: "/Malaya_Ranjan_Pradhan.pdf" },
 };
 
 export const aboutContent = {
