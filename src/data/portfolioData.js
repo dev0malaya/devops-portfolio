@@ -244,39 +244,15 @@ export const projects = [
 ];
 
 export const certificates = {
+  title: "Education & Qualifications",
+  subtitle: "Academic background and degree credentials.",
   featured: [
     {
-      name: "AWS Solutions Architect Level Architecture",
-      issuer: "Amazon Web Services (Hands-on)",
-      icon: "☁️",
-    },
-    {
-      name: "Kubernetes & Container Orchestration",
-      issuer: "Cloud Native & Docker",
-      icon: "☸️",
-    },
-    {
-      name: "DevOps & CI/CD Pipeline Automation",
-      issuer: "Jenkins & GitHub Actions",
-      icon: "⚡",
-    },
-    {
-      name: "Linux Systems Administration & Scripting",
-      issuer: "Ubuntu / RedHat Enterprise",
-      icon: "🐧",
-    },
-    {
-      name: "Python Cloud Automation (boto3)",
-      issuer: "AWS Automation & Python",
-      icon: "🐍",
-    },
-    {
       name: "Master of Computer Applications (MCA)",
-      issuer: "KIIT Deemed to be University",
+      issuer: "KIIT Deemed to be University | Bhubaneswar, Odisha (2023 – 2025)",
       icon: "🎓",
     },
   ],
-  viewAllUrl: "https://github.com/dev0malaya",
 };
 
 export const leadershipList = [
